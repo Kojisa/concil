@@ -67,7 +67,7 @@ export default class Menu extends Component{
     leerArchivo(){
         let file = this.state.archivo;
         let reader = new FileReader();
-        let dic ={
+        let dic = {
             desde:convertirFecha(this.state.desde),
             hasta:convertirFecha(this.state.hasta),
             cuentabancaria:this.state.cuentaBancaria,

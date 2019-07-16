@@ -17,7 +17,9 @@ def devolverCuentas():
 
     ejercicio = request.json['ejercicio']
 
-    orden = "Select cuenta,nro_cuenta,num_sucursal from cta_cuentas where ejercicio = {} and cod_banco = 'BP' "
+    orden = "Select cuenta,nro_cuenta,num_sucursal from cta_cuentas\
+         where ejercicio = {} and cod_banco = 'BP'\
+        order by cuenta DESC "
     datos = db.contestarQuery(orden.format(ejercicio))
 
     datosFinales = []

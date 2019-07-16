@@ -19,7 +19,7 @@ export default class DBHandler{
         var request = new XMLHttpRequest();
         request.onreadystatechange = function(){
         if(this.readyState === 4 && this.status === 200){
-            if (fun != null){
+            if (fun !== null){
             if (this.responseText.length > 0){
                 fun(JSON.parse(this.responseText));
             }
@@ -32,7 +32,7 @@ export default class DBHandler{
         request.open(metodo,"http://"+this.HOST+"/"+url,asinc);
         var datosFinales = {};
         datosFinales = datos;
-        if (metodo == "POST"){
+        if (metodo === "POST"){
         request.setRequestHeader('Content-type','application/json');
         request.send(JSON.stringify(datosFinales));
         }
